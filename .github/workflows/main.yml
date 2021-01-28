@@ -16,5 +16,5 @@ jobs:
     uses: rubensa/docker-ubuntu-tini/.github/workflows/docker-build.yml@master
     with:
       DOCKER_IMAGE_NAME: ubuntu-tini-dev-chrome-kdiff3
-      DOCKER_IMAGE_TAG: latest
+      DOCKER_IMAGE_TAG: 18.04
     secrets: inherit
