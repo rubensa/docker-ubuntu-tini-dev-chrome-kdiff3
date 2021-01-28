@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 docker build --no-cache \
-  -t "rubensa/ubuntu-tini-dev-chrome-kdiff3" \
+  -t "rubensa/ubuntu-tini-dev-chrome-kdiff3:20.04" \
   --label "maintainer=Ruben Suarez <rubensa@gmail.com>" \
   .

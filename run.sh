@@ -39,4 +39,4 @@ docker run --rm -it \
   ${MOUNTS} \
   ${EXTRA} \
   ${RUNNER} \
-  rubensa/ubuntu-tini-dev-chrome-kdiff3 "$@"
+  rubensa/ubuntu-tini-dev-chrome-kdiff3:20.04 "$@"

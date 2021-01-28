@@ -1,4 +1,4 @@
-FROM rubensa/ubuntu-tini-dev-chrome
+FROM rubensa/ubuntu-tini-dev-chrome:20.04
 LABEL author="Ruben Suarez <rubensa@gmail.com>"
 
 # Tell docker that all future commands should be run as root

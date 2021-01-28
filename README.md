@@ -1,6 +1,6 @@
 # Docker image with development tools and kdiff3
 
-This is a Docker image based on [rubensa/ubuntu-tini-dev-chrome](https://github.com/rubensa/docker-ubuntu-tini-dev-chrome) with kdiff3 for development.
+This is a Docker image based on [rubensa/ubuntu-tini-dev-chrome](https://github.com/rubensa/docker-ubuntu-tini-dev-chrome) 20.04 with kdiff3 for development.
 
 ## Building
 
@@ -10,7 +10,7 @@ You can build the image like this:
 #!/usr/bin/env bash
 
 docker build --no-cache \
-  -t "rubensa/ubuntu-tini-dev-chrome-kdiff3" \
+  -t "rubensa/ubuntu-tini-dev-chrome-kdiff3:20.04" \
   --label "maintainer=Ruben Suarez <rubensa@gmail.com>" \
   .
 ```
@@ -61,7 +61,7 @@ docker run --rm -it \
   ${MOUNTS} \
   ${EXTRA} \
   ${RUNNER} \
-  rubensa/ubuntu-tini-dev-chrome-kdiff3 "$@"
+  rubensa/ubuntu-tini-dev-chrome-kdiff3:20.04 "$@"
 ```
 
 *NOTE*: Mounting /etc/timezone and /etc/localtime allows you to use your host timezone on container.
