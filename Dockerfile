@@ -10,14 +10,15 @@ ENV HOME=/root
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Configure apt and install packages
-RUN apt-get update \
-    #
-    # Install kdiff3
-    && apt-get -y install --no-install-recommends kdiff3 2>&1 \
-    #
-    # Clean up
-    && apt-get autoremove -y \
+# Configure apt
+RUN apt-get update
+
+# Install kdiff3
+RUN echo "# Installing kdiff3..." \
+    && apt-get -y install --no-install-recommends kdiff3 2>&1
+
+# Clean up apt
+RUN apt-get autoremove -y \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 
