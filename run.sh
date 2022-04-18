@@ -14,6 +14,10 @@ prepare_docker_user_and_group() {
   RUNNER+=" --user=${USER_ID}:${GROUP_ID}"
 }
 
+prepare_docker_from_docker() {
+    MOUNTS+=" --mount type=bind,source=/var/run/docker.sock,target=/var/run/docker-host.sock"
+}
+
 prepare_docker_ipc_host_sharing() {
   # Allow shared memory to avoid RAM access failures and rendering glitches due to X extesnion MIT-SHM
   EXTRA+=" --ipc=host"
@@ -30,6 +34,7 @@ prepare_docker_x11_host_sharing() {
 
 prepare_docker_timezone
 prepare_docker_user_and_group
+prepare_docker_from_docker
 prepare_docker_ipc_host_sharing
 prepare_docker_x11_host_sharing
 

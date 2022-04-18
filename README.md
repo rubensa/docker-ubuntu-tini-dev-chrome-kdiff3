@@ -36,6 +36,10 @@ prepare_docker_user_and_group() {
   RUNNER+=" --user=${USER_ID}:${GROUP_ID}"
 }
 
+prepare_docker_from_docker() {
+    MOUNTS+=" --mount type=bind,source=/var/run/docker.sock,target=/var/run/docker-host.sock"
+}
+
 prepare_docker_ipc_host_sharing() {
   # Allow shared memory to avoid RAM access failures and rendering glitches due to X extesnion MIT-SHM
   EXTRA+=" --ipc=host"
@@ -52,6 +56,7 @@ prepare_docker_x11_host_sharing() {
 
 prepare_docker_timezone
 prepare_docker_user_and_group
+prepare_docker_from_docker
 prepare_docker_ipc_host_sharing
 prepare_docker_x11_host_sharing
 
@@ -64,7 +69,7 @@ docker run --rm -it \
   rubensa/ubuntu-tini-dev-chrome-kdiff3 "$@"
 ```
 
-*NOTE*: Mounting /etc/timezone and /etc/localtime allows you to use your host timezone on container.
+*NOTE*: Mounting /var/run/docker.sock allows host docker usage inside the container (docker-from-docker).
 
 This way, the internal user UID an group GID are changed to the current host user:group launching the container and the existing files under his internal HOME directory that where owned by user and group are also updated to belong to the new UID:GID.
 
