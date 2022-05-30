@@ -1,6 +1,6 @@
 # Docker image with development tools and kdiff3
 
-This is a Docker image based on [rubensa/ubuntu-tini-dev-chrome](https://github.com/rubensa/docker-ubuntu-tini-dev-chrome) with kdiff3 for development.
+This is a Docker image based on [rubensa/ubuntu-tini-dev-chrome](https://github.com/rubensa/docker-ubuntu-tini-dev-chrome) 22.04 with kdiff3 for development.
 
 ## Building
 
@@ -11,12 +11,12 @@ You can build the image like this:
 
 docker buildx build --platform=linux/amd64,linux/arm64 --no-cache \
 docker build --no-cache \
-  -t "rubensa/ubuntu-tini-dev-chrome-kdiff3" \
+  -t "rubensa/ubuntu-tini-dev-chrome-kdiff3:22.04" \
   --label "maintainer=Ruben Suarez <rubensa@gmail.com>" \
   .
 
 docker buildx build --load \
-	-t "rubensa/ubuntu-tini-dev-chrome-kdiff3" \
+	-t "rubensa/ubuntu-tini-dev-chrome-kdiff3:22.04" \
 	.
 ```
 
@@ -71,7 +71,7 @@ docker run --rm -it \
   ${MOUNTS} \
   ${EXTRA} \
   ${RUNNER} \
-  rubensa/ubuntu-tini-dev-chrome-kdiff3 "$@"
+  rubensa/ubuntu-tini-dev-chrome-kdiff3:22.04 "$@"
 ```
 
 *NOTE*: Mounting /var/run/docker.sock allows host docker usage inside the container (docker-from-docker).
