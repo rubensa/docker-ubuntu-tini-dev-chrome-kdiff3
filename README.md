@@ -9,10 +9,15 @@ You can build the image like this:
 ```
 #!/usr/bin/env bash
 
+docker buildx build --platform=linux/amd64,linux/arm64 --no-cache \
 docker build --no-cache \
   -t "rubensa/ubuntu-tini-dev-chrome-kdiff3" \
   --label "maintainer=Ruben Suarez <rubensa@gmail.com>" \
   .
+
+docker buildx build --load \
+	-t "rubensa/ubuntu-tini-dev-chrome-kdiff3" \
+	.
 ```
 
 ## Running
