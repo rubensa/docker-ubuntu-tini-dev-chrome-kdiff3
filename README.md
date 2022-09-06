@@ -1,3 +1,6 @@
+| ⚠ **WARNING**: This image is obsolete and not maintained anymore.  Please use [rubensa/ubuntu-tini-dev-chrome](https://github.com/rubensa/docker-ubuntu-tini-dev-chrome) instead. |
+| --- |
+
 # Docker image with development tools and kdiff3
 
 This is a Docker image based on [rubensa/ubuntu-tini-dev-chrome](https://github.com/rubensa/docker-ubuntu-tini-dev-chrome) with kdiff3 for development.
